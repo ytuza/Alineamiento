@@ -5,7 +5,7 @@ using namespace std;
 
 int main() {
 
-	
+	/*
 	Matrix m("TGTTGTCACTTATGCGTGCTGGGCAGGCTGAGATAGATCCGACAC","TGATGTATTAGGACCTCAACACAAGAAGGAAATTATTCGATATTTGTATAATCATCAGAACGAAGATGGGGGTTGGGGATTCC");
 
 	m.local();
@@ -18,7 +18,7 @@ int main() {
 
 	//cout << m.data[m.data.size() - 1][m.data[0].size() - 1].first << endl;
 
-	/*
+	*/
 	
 	vector<string> doc;
 
@@ -32,7 +32,7 @@ int main() {
 	c.full_m();
 
 	c.print();
-	*/
+	
 
 	system("pause");
 	return 0;
