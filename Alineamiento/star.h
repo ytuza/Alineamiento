@@ -47,13 +47,14 @@ inline void Star::full_m()
 			Matrix tem(stv[i],stv[j]);
 			int tem_s = tem.global();
 
-			val_tem[i][j] = tem.res[0];
-			val_tem[j][i] = tem.res[0];
+			val_tem[i][j] = tem.caminoGol();
+			val_tem[j][i] = val_tem[i][j];
 
 			mats[i][j] = tem_s;
 			mats[j][i] = tem_s;
 		}
 	}
+
 
 	
 	for (int i = 0; i < n_str; i++) {
@@ -74,6 +75,9 @@ inline void Star::full_m()
 
 	cout << "cadena principal " << i_g << " : " << stv[i_g] << endl;
 
+	cout << val_tem[i_g][1].first << endl << val_tem[i_g][1].second << endl;
+	cout << val_tem[i_g][2].first << endl << val_tem[i_g][2].second << endl;
+	cout << val_tem[i_g][3].first << endl << val_tem[i_g][3].second << endl;
 	
 	//rpta_s.push_back();
 

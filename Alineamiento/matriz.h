@@ -50,6 +50,9 @@ public:
 	int global();
 	int local();
 	void caminoG();
+
+	pair<string, string> caminoGol();
+
 	void caminoL();
 
 	vector<pair<string,string>> res;
@@ -228,7 +231,6 @@ inline void Matrix::caminoG()
 	cout << s1.size() << "<+>" << s2.size() << endl;
 
 	for (int cad = 0; cad < res.size() ; cad++) {
-	//for (int cad = 0; cad < 1; cad++) {
 		int i = f - 1 + count(res[cad].first.begin(), res[cad].first.end(), '-') - res[cad].first.size();
 		
 		int j = c - 1 + count(res[cad].second.begin(), res[cad].second.end(), '-') - res[cad].first.size();
@@ -496,5 +498,89 @@ inline int Matrix::local()
 
 	return max;
 
+
+}
+
+
+
+inline pair<string, string> Matrix::caminoGol()
+{
+	pair<string, string> rpta({"",""});
+
+
+	cout << s1 << "<+>" << s2 << endl;
+	cout << s1.size() << "<+>" << s2.size() << endl;
+
+	int i = f - 1;
+
+	int j = c - 1;
+
+		while (i > 0 && j > 0) {
+
+			//cout << "[" << i << "," << j << "]";
+
+			switch (data[i][j].second)
+			{
+			case 1:
+				j--;
+				rpta.first.push_back('-');
+				rpta.second.push_back(s2[j]);
+
+				break;
+			case 2:
+				i--;
+				rpta.first.push_back(s1[i]);
+				rpta.second.push_back('-');
+
+				break;
+			case 3:
+				i--;
+				j--;
+				rpta.first.push_back(s1[i]);
+				rpta.second.push_back(s2[j]);
+
+				break;
+			case 4:
+				i--;
+				j--;
+				rpta.first.push_back(s1[i]);
+				rpta.second.push_back(s2[j]);
+
+				break;
+			case 5:
+				j--;
+				rpta.first.push_back('-');
+				rpta.second.push_back(s2[j]);
+
+				break;
+			case 6:
+				j--;
+				rpta.first.push_back('-');
+				rpta.second.push_back(s2[j]);
+
+				break;
+			default:
+				break;
+			}
+		}
+
+		while (i > 0) {
+			i--;
+			rpta.first.push_back(s1[i]);
+			rpta.second.push_back('-');
+		}
+		while (j > 0) {
+			j--;
+			rpta.first.push_back('-');
+			rpta.second.push_back(s2[j]);
+		}
+
+
+
+		swapS(rpta.first);
+		swapS(rpta.second);
+
+		res.push_back(rpta);
+		return rpta;
 
 }
