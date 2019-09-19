@@ -75,28 +75,35 @@ inline void Star::full_m()
 
 	cout << "cadena principal " << i_g << " : " << stv[i_g] << endl;
 
-	cout << val_tem[i_g][1].first << endl << val_tem[i_g][1].second << endl;
-	cout << val_tem[i_g][2].first << endl << val_tem[i_g][2].second << endl;
-	cout << val_tem[i_g][3].first << endl << val_tem[i_g][3].second << endl;
+	//cout << val_tem[i_g][1].first << endl << val_tem[i_g][1].second << endl;
+	//cout << val_tem[i_g][2].first << endl << val_tem[i_g][2].second << endl;
+	//cout << val_tem[i_g][3].first << endl << val_tem[i_g][3].second << endl;
 	
 
 	rpta_s.push_back(stv[i_g]);
 
 	for(int i = 0;i<n_str;i++){
 		if (i != i_g) {
-			
+
 			rpta_s.push_back(val_tem[i_g][i].second);
 
-			for (int j = 0; j < n_str; j++) {
-				
-				for (int h = 0; h < rpta_s.back().size(); h++) {
+			for (int h = 0; h < rpta_s.back().size(); h++) {
+				if (rpta_s.back()[h] != rpta_s[0][h]) {
+					for (int j = 0; j < rpta_s.size();j++) {
+						rpta_s[j].insert(h,"-");
+						
+					}
 				}
-
 			}
 		}
 	}
-	
 
+
+	for (int i = 0; i < rpta_s.size(); i++) {
+
+		cout << "->" << rpta_s[i] << endl;
+	}
+	
 }
 
 void Star::print() {
