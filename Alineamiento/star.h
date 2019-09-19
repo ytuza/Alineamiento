@@ -79,13 +79,20 @@ inline void Star::full_m()
 	cout << val_tem[i_g][2].first << endl << val_tem[i_g][2].second << endl;
 	cout << val_tem[i_g][3].first << endl << val_tem[i_g][3].second << endl;
 	
-	//rpta_s.push_back();
+
+	rpta_s.push_back(stv[i_g]);
 
 	for(int i = 0;i<n_str;i++){
 		if (i != i_g) {
 			
+			rpta_s.push_back(val_tem[i_g][i].second);
 
+			for (int j = 0; j < n_str; j++) {
+				
+				for (int h = 0; h < rpta_s.back().size(); h++) {
+				}
 
+			}
 		}
 	}
 	
