@@ -1,6 +1,7 @@
 #include <iostream>
 #include "matriz.h"
-#include "prog.h"
+//#include "prog.h"
+#include "clus.h"
 using namespace std;
 
 int main() {
@@ -18,7 +19,7 @@ int main() {
 
 	//cout << m.data[m.data.size() - 1][m.data[0].size() - 1].first << endl;
 
-	*/
+	
 
 	vector<string> doc;
 
@@ -34,6 +35,12 @@ int main() {
 	Prog c(doc);
 	//c.mat_dist();
 	c.prog_total();
+
+	*/
+
+	Clus c(7);
+	//c.mat_dist();
+	c.prog_dis();
 
 	system("pause");
 	return 0;

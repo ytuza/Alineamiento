@@ -8,70 +8,6 @@ using namespace std;
 typedef vector<vector<float>> m_fl;
 
 
-
-
-float dist(string a, string b) {
-
-	if (a.size() != b.size()) {
-		cout << "ERROR: tamaño" << endl;
-		return -1;
-	}
-
-	int p_d = 0, p_a = 0;
-
-	for (int i = 0; i < a.size(); i++) {
-		if (a[i] != '-' and b[i] != '-') {
-			if (a[i] == b[i]) {
-				p_a++;
-			}
-			else {
-				p_d++;
-			}
-
-		}
-	}
-	if (p_a == 0) {
-		cout << "error div0" << endl;
-		return 0.0;
-	}
-	return p_d / p_a;
-
-}
-
-float dist(pair<string, string> a) {
-
-	//cout << ">" <<a.first << endl;
-	//cout << ">" << a.second << endl;
-
-	if (a.first.size() != a.second.size()) {
-		cout << "ERROR: tamaño" << endl;
-		return -1;
-	}
-
-	int p_d = 0, p_a = 0;
-
-	for (int i = 0; i < a.first.size(); i++) {
-
-		if (a.first[i] == '-' or a.second[i] == '-') {
-			p_d++;
-		}
-		else {
-			p_a++;
-
-		}
-	}
-
-	cout << "P_d " << p_d << "p_a" << p_a << endl;
-	if (p_a == 0) {
-		cout << "error div0" << endl;
-		return 0.0;
-	}
-	float t = float(p_d) / float(p_a);
-
-	return t;
-
-}
-
 class Prog
 {
 public:
@@ -150,9 +86,6 @@ void Prog::mat_dist()
 		}
 		//cout << "++" << endl;
 	}
-
-
-
 }
 
 void Prog::print() {

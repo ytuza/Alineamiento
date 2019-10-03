@@ -12,6 +12,41 @@ typedef pair<int, int> pair_i;
 typedef vector<vector<pair_i>> m_vec;
 
 
+float dist(pair<string, string> a) {
+
+	//cout << ">" <<a.first << endl;
+	//cout << ">" << a.second << endl;
+
+	if (a.first.size() != a.second.size()) {
+		cout << "ERROR: tamaño" << endl;
+		return -1;
+	}
+
+	int p_d = 0, p_a = 0;
+
+	for (int i = 0; i < a.first.size(); i++) {
+
+		if (a.first[i] == '-' or a.second[i] == '-') {
+			p_d++;
+		}
+		else {
+			p_a++;
+
+		}
+	}
+
+	//cout << "P_d " << p_d << "p_a" << p_a << endl;
+	if (p_a == 0) {
+		cout << "error div0" << endl;
+		return 0.0;
+	}
+	float t = float(p_d) / float(p_a);
+
+	return t;
+
+}
+
+
 void swapS(string &str) {
 	string rpta;
 
