@@ -118,7 +118,9 @@
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="clus.h" />
     <ClInclude Include="matriz.h" />
+    <ClInclude Include="prog.h" />
     <ClInclude Include="star.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
